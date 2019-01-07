@@ -50,6 +50,7 @@ export default class RandomPlanet extends Component {
     
     return (
       <div className="random-planet jumbotron rounded">
+        {errorMessage}
         {spiner}
         {content}
       </div>
