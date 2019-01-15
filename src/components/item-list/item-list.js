@@ -21,10 +21,12 @@ this.swapiService
   }
 
   renderItems(arr){
-    return arr.map((person) => {
+    return arr.map(({id, name}) => {
       return(
-        <li className = "list-group-item" key = {person.id}>
-          {person.name}
+        <li className = "list-group-item" 
+        key = {id}
+        onClick = {() => this.props.onItemSelected(id)}>
+          {name}
         </li>
       )
     })
@@ -35,17 +37,11 @@ this.swapiService
     if (!peopleList){
       return <Spinner/>
     }
+    const items = this.renderItems(peopleList);
+
     return (
       <ul className="item-list list-group">
-        <li className="list-group-item">
-          Luke Skywalker
-        </li>
-        <li className="list-group-item">
-          Darth Vader
-        </li>
-        <li className="list-group-item">
-          R2-D2
-        </li>
+       {items}
       </ul>
     );
   }
