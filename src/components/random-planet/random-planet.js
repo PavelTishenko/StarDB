@@ -48,15 +48,11 @@ export default class RandomPlanet extends Component {
        // update state of component 
       .then(this.onPlanetLoaded)
       .catch(this.onError);
-
   }
 
   render() {
    const {planet, loading, error} = this.state;
-    console.log('render');
-    
    const hasData = !(loading  ||  error);
-
    const errorMessage = error ? <ErrorIndicator/> : null;
    const spiner = loading ? <Spinner/> : null;
    const content = hasData ? <PlanetView planet = {planet}/> : null;
