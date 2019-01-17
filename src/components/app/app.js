@@ -7,12 +7,11 @@ import PersonDetails from '../person-details';
 import ErrorButton from '../error-button';
 import './app.css';
 import ErrorIndicator from '../error-indicator';
-
+import PeoplePage from '../people-page';
 export default class App extends Component {
 
   state = {
     showRandomPlanet: true,
-    selectedPerson: 1,
     hasError: false
   };
 
@@ -55,15 +54,7 @@ export default class App extends Component {
           Toggle Random Planet
         </button>
         <ErrorButton/>
-
-        <div className="row mb2">
-          <div className="col-md-6">
-            <ItemList onItemSelected={this.onPersonSelected}/>
-          </div>
-          <div className="col-md-6">
-            <PersonDetails personId={this.state.selectedPerson} />
-          </div>
-        </div>
+        <PeoplePage/>
       </div>
     );
   }
