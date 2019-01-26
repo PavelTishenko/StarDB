@@ -55,7 +55,7 @@ export default class App extends Component {
           onClick={this.toggleRandomPlanet}>
           Toggle Random Planet
         </button>
-        <ErrorButton/>
+        {/* <ErrorButton/> */}
 
         <PeoplePage/>
 
@@ -66,7 +66,7 @@ export default class App extends Component {
             renderItem = {(item) => (<span>{item.name}<button>!</button></span>)}/>
           </div>
           <div className="col-md-6">
-          <ErrorButton/>
+          {/* <ErrorButton/> */}
             <PersonDetails personId={this.state.selectedPerson} />
           </div>
        </div>
@@ -78,7 +78,7 @@ export default class App extends Component {
             renderItem = {(item) => item.name}/>
           </div>
           <div className="col-md-6">
-          <ErrorButton/>
+          {/* <ErrorButton/> */}
             <PersonDetails personId={this.state.selectedPerson} />
           </div>
        </div>
