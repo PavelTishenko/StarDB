@@ -62,8 +62,13 @@ export default class App extends Component {
         <div className="row mb2">
           <div className="col-md-6">
             <ItemList onItemSelected={this.onPersonSelected}
-            getData = {this.swapiService.getAllPlanets}
-            renderItem = {(item) => (<span>{item.name}<button>!</button></span>)}/>
+            getData = {this.swapiService.getAllPlanets}>
+
+            {(item) => (
+            <span>{item.name}<button>!</button></span>
+            )}
+            
+            </ItemList>
           </div>
           <div className="col-md-6">
           {/* <ErrorButton/> */}
@@ -74,8 +79,9 @@ export default class App extends Component {
        <div className="row mb2">
           <div className="col-md-6">
             <ItemList onItemSelected={this.onPersonSelected}
-            getData = {this.swapiService.getStarships}
-            renderItem = {(item) => item.name}/>
+            getData = {this.swapiService.getStarships}>
+            {(item) => item.name}
+            </ItemList>
           </div>
           <div className="col-md-6">
           {/* <ErrorButton/> */}
